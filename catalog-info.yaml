@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dq4xumryl-java-quarkus-gitops
+  description: This is GitOps manifest for dq4xumryl-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: dq4xumryl-java-quarkus
+    janus-idp.io/tekton: dq4xumryl-java-quarkus 
+    backstage.io/kubernetes-id: dq4xumryl-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:dq4xumryl-java-quarkus
